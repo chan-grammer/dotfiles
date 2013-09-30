@@ -357,7 +357,7 @@ let scripts_pattern="~/vim_scripts/*.vim"
 " source vim scripts in vim_script_path
 for f in split(glob(scripts_pattern), "\n")
     if filereadable(f)
-        exe 'so' . f
+        exe 'so' f
     endif
 endfor
 
