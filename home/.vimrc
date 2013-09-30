@@ -51,6 +51,13 @@ Bundle 'Valloric/MatchTagAlways'
 Bundle 'godlygeek/tabular'
 "Gundo
 Bundle 'sjl/gundo.vim'
+"Vim-less
+Bundle 'lunaru/vim-less'
+"Vim-jsbeautify
+Bundle 'maksimr/vim-jsbeautify'
+Bundle 'einars/js-beautify'
+"Vim EditorConfig
+Bundle 'editorconfig/editorconfig-vim'
 
 "}}}
 " color schemes{{{
@@ -349,8 +356,17 @@ if has("autocmd")
     " Clear paste mode when going back to normal mode
     au InsertLeave * set nopaste
 
-    au FileType scss setlocal autoread
+    au FileType css setlocal autoread
+    " map <c-f> :call JsBeautify()<cr>;
+    au FileType css nnoremap <buffer> <c-f> :call CSSBeautify()<cr>
+
+    au FileType javascript nnoremap <buffer> <c-f> :call JsBeautify()<cr>
+
+    au FileType html nnoremap <buffer> <c-f> :call HtmlBeautify()<cr>
+
     au FileType vim setlocal foldmethod=marker
+    " note install first pman, and download php documentation
+    au FileType php setlocal keywordprg=pman
 
 "}}}
 " vim scripts {{{
