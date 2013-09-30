@@ -76,6 +76,7 @@ Bundle 'sjl/badwolf'
 filetype plugin indent on " required
 syntax enable
 let mapleader = ","
+let html_no_rendering=1
 " encoding
 set encoding=utf-8
 " don't force writing buffer to file when
@@ -109,6 +110,9 @@ set synmaxcol=128
 set nowrap
 " used with %
 set matchpairs+=<:>
+" useful for buffer switching
+" when there are so many files added to the buffer list
+set nomore
 
 "}}}
 " ui settings{{{
@@ -128,7 +132,7 @@ if has('gui_running')
     colorscheme pyte
 else
     set background=dark
-    colorscheme ron
+    colorscheme distinguished
 endif
 
 "}}}
