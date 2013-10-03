@@ -80,8 +80,11 @@ Bundle 'sjl/badwolf'
 
 filetype plugin indent on " required
 syntax enable
+
 let mapleader = ","
 let html_no_rendering=1
+
+set history=100
 " encoding
 set encoding=utf-8
 " don't force writing buffer to file when
@@ -134,7 +137,7 @@ if has('gui_running')
     " set guioptions-=e
     set guioptions=ac
     " let g:badwolf_darkgutter = 1
-    colorscheme pyte
+    colorscheme sahara
 else
     set background=dark
     colorscheme distinguished
@@ -273,6 +276,12 @@ nnoremap gk -
 
 " yank from cursor to end of line
 nnoremap Y y$
+
+" for jumping around code blocks
+nmap <leader>j ]m
+nmap <leader>J ]M
+nmap <leader>k [m
+nmap <leader>K [M
 
 " toggles between relativenumber and number
 " If nu is set toggle rnu and vice versa
