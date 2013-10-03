@@ -66,8 +66,6 @@ Bundle 'editorconfig/editorconfig-vim'
 Bundle 'Lokaltog/vim-distinguished'
 "   Github
 Bundle 'endel/vim-github-colorscheme'
-"   VividChalk
-Bundle 'tpope/vim-vividchalk'
 "   Pyte
 Bundle 'therubymug/vim-pyte'
 "   Sahara
@@ -367,6 +365,15 @@ if has("autocmd")
     au FileType vim setlocal foldmethod=marker
     " note install first pman, and download php documentation
     au FileType php setlocal keywordprg=pman
+
+    " if vim is compiled with omnifunc
+    if exists("+omnifunc")
+        autocmd Filetype *
+        \if &omnifunc == "" |
+        \setlocal omnifunc=syntaxcomplete#Complete |
+        \endif
+    endif
+
 
 "}}}
 " vim scripts {{{
