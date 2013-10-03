@@ -60,6 +60,8 @@ Bundle 'einars/js-beautify'
 Bundle 'editorconfig/editorconfig-vim'
 "Javascript-Libraries-Syntax
 Bundle 'mklabs/vim-backbone'
+"Syntastic
+Bundle 'scrooloose/syntastic'
 
 "}}}
 " color schemes{{{
@@ -228,6 +230,11 @@ let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
 
 " NERDTree
 let NERDTreeIgnore=['\.vim$', '\.git$', '\~$']
+
+" Syntastic
+let g:syntastic_enable_signs=1
+let g:syntastic_auto_jump=1
+let g:syntastic_auto_jump=1
 
 
 "}}}
