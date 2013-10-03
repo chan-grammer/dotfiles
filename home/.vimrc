@@ -58,6 +58,8 @@ Bundle 'maksimr/vim-jsbeautify'
 Bundle 'einars/js-beautify'
 "Vim EditorConfig
 Bundle 'editorconfig/editorconfig-vim'
+"Javascript-Libraries-Syntax
+Bundle 'mklabs/vim-backbone'
 
 "}}}
 " color schemes{{{
@@ -256,6 +258,7 @@ nnoremap <leader>gu :GundoToggle<CR>
 
 " applies nmap, smap, vmap
 map <leader>; <esc>
+smap <leader>; <esc>
 " applies imap, cmap
 imap <leader>; <esc>
 cmap <leader>; <c-c>
@@ -364,10 +367,10 @@ if has("autocmd")
     au InsertLeave * set nopaste
 
     au FileType css setlocal autoread
-    " map <c-f> :call JsBeautify()<cr>;
     au FileType css nnoremap <buffer> <c-f> :call CSSBeautify()<cr>
 
     au FileType javascript nnoremap <buffer> <c-f> :call JsBeautify()<cr>
+    au FileType javascript set sts=2 sw=2 et
 
     au FileType html nnoremap <buffer> <c-f> :call HtmlBeautify()<cr>
 
