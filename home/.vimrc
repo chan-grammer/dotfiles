@@ -1,4 +1,5 @@
 " vundle settings{{{
+
 set nocompatible " be iMproved
 filetype off    " required!
 
@@ -88,11 +89,8 @@ syntax enable
 let mapleader = ","
 let html_no_rendering=1
 
-set history=100
-" encoding
+set history=200
 set encoding=utf-8
-" don't force writing buffer to file when
-" moving between buffers
 set hidden
 " search relative to the directory of the current file
 " and within the current directory
@@ -103,11 +101,8 @@ set noswapfile
 set wb
 " don't redraw while executing macros
 set lazyredraw
-" show line number
 set nu
-" show ruler
 set ruler
-" Configure backspace so it acts as it should
 set backspace=eol,start,indent
 set listchars=tab:>-,eol:$
 " No modelines for security reasons
@@ -118,20 +113,22 @@ set pastetoggle=<F2>
 set fileformats=unix,dos
 " syntax coloring lines that are too long just slows down the world
 set synmaxcol=128
-" don't wrap
 set nowrap
 " used with %
 set matchpairs+=<:>
 " useful for buffer switching
 " when there are so many files added to the buffer list
 set nomore
+" Lines above and below the current cursor while scrolling
+" also modifies the behaviour of H, M, L
+set scrolloff=5
 
 "}}}
 " ui settings{{{
 
 if has('gui_running')
     if has("gui_gtk2")
-        set guifont=Inconsolata\ 14
+        set guifont=Inconsolata\ 12
 
     elseif has("gui_win32")
         set guifont=Consolas:h11:cANSI
@@ -140,23 +137,22 @@ if has('gui_running')
     " set guioptions-=T
     " set guioptions-=e
     set guioptions=ac
-    " let g:badwolf_darkgutter = 1
     colorscheme sahara
 else
+    colorscheme badwolf
+    let g:badwolf_darkgutter = 1
     set background=dark
-    colorscheme distinguished
 endif
 
 "}}}
 " cmdline settings{{{
 
-" Lines above and below the current cursor while scrolling
-" also modifies the behaviour of H, M, L
-set scrolloff=5
 " show what mode you're currently at
 set showmode
 " enable enhanced command line completion
 set wildmenu
+" ignore files on command completion
+set wildignore=*.o,*~,*.git
 " Height of command bar
 set cmdheight=2
 " set statusline
@@ -261,6 +257,10 @@ nnoremap <leader>gu :GundoToggle<CR>
 "}}}
 " general mappings {{{
 
+" disable keys
+nmap Q <nop>
+nmap F1 <nop>
+
 " mapping in replacement of esc or CTRL-C in command mode
 
 " applies nmap, smap, vmap
@@ -319,10 +319,6 @@ nnoremap <Right> <c-w>>
 "_ in this keymap is to jump for a line with a nonblank char
 "map for switching buffers
 nnoremap <space> <c-w><c-w>_
-" resizing for equal window sizes
-nnoremap <s-space> <c-w>=
-
-" Dealing with buffers
 
 " selecting buffers
 nnoremap <silent> <leader>sb :ls<cr>:b<space>
@@ -349,6 +345,7 @@ nnoremap <F12>f :exe 'silent !firefox %'<cr>
 cnoremap <leader>p <c-r>=expand("%:p:h")<cr>
 "display the current filename
 cnoremap <leader>f <c-r>=expand("%:p")<cr>
+
 " Open a newtab when doing a redirect of an :ex command output
 command! -nargs=+ -complete=command TabMessage :call TabMessage(<q-args>)
 "reselect indented block of text in vim
@@ -362,7 +359,6 @@ if has("autocmd")
 
     " Look for unnamed register "
     " Return to previous cursor position upon reading a file
-
     au BufReadPost *
                 \ if line("'\"") > 0 && line("'\"") <= line("$") |
                 \ exe "normal! g`\"" |
@@ -373,17 +369,39 @@ if has("autocmd")
     " Clear paste mode when going back to normal mode
     au InsertLeave * set nopaste
 
-    au FileType css setlocal autoread
-    au FileType css nnoremap <buffer> <c-f> :call CSSBeautify()<cr>
+    " CSS {{{
+    augroup ft_css
+        au!
+        au FileType css setlocal autoread
+        au FileType css nnoremap <buffer> <c-f> :call CSSBeautify()<cr>
+    augroup END
+    " }}}
 
-    au FileType javascript nnoremap <buffer> <c-f> :call JsBeautify()<cr>
-    au FileType javascript set sts=2 sw=2 et
+    " JAVASCRIPT {{{
+    augroup ft_js
+        au FileType javascript nnoremap <buffer> <c-f> :call JsBeautify()<cr>
+        au FileType javascript set sts=2 sw=2 et
+    augroup END
+    " }}}
 
-    au FileType html nnoremap <buffer> <c-f> :call HtmlBeautify()<cr>
+    " HTML  {{{
+    augroup ft_html
+        au FileType html nnoremap <buffer> <c-f> :call HtmlBeautify()<cr>
+    augroup END
+    " }}}
 
-    au FileType vim setlocal foldmethod=marker
-    " note install first pman, and download php documentation
-    au FileType php setlocal keywordprg=pman
+    " VIM  {{{
+    augroup ft_vim
+        au FileType vim setlocal foldmethod=marker
+    augroup END
+    " }}}
+
+    " PHP {{{
+    augroup ft_php
+        " note install first pman, and download php documentation
+        au FileType php setlocal keywordprg=pman
+    augroup END
+    " }}}
 
     " if vim is compiled with omnifunc
     if exists("+omnifunc")
