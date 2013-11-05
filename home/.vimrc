@@ -13,13 +13,12 @@ else
     call vundle#rc()
 endif
 
-" let Vundle manage Vundle
-" required!
-Bundle 'gmarik/vundle'
-
 "}}}
 " vundle plugins{{{
 
+" let Vundle manage Vundle
+" required!
+Bundle 'gmarik/vundle'
 "Vim Snipmate
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
@@ -95,6 +94,9 @@ syntax enable
 let mapleader = ","
 let html_no_rendering=1
 
+" disable splash screen
+set shortmess +=I
+
 set history=200
 set encoding=utf-8
 set hidden
@@ -120,14 +122,19 @@ set fileformats=unix,dos
 " syntax coloring lines that are too long just slows down the world
 set synmaxcol=128
 set nowrap
+
+" symbol to show if wrap is on
+set showbreak=↪
 " used with %
 set matchpairs+=<:>
 " useful for buffer switching
 " when there are so many files added to the buffer list
 set nomore
-" Lines above and below the current cursor while scrolling
-" also modifies the behaviour of H, M, L
 set scrolloff=5
+set mouse=a
+" go up to the directory hierarchy until a tag file is found
+" ';' means to recursively search upward. :h file-searching
+set tags=./tags;
 
 "}}}
 " ui settings{{{
@@ -139,15 +146,16 @@ if has('gui_running')
     elseif has("gui_win32")
         set guifont=Consolas:h11:cANSI
     endif
-    set background=dark
+    set background=light
     " set guioptions-=T
     " set guioptions-=e
     set guioptions=ac
-    colorscheme sahara
+    colorscheme pyte
 else
+    set background=dark
     colorscheme badwolf
     let g:badwolf_darkgutter = 1
-    set background=dark
+    let g:badwolf_html_link_underline = 0
 endif
 
 "}}}
@@ -212,7 +220,8 @@ set foldcolumn=2
 " plugin settings {{{
 
 " Note provide your own path for the respective phpqa_* plugins
-" PHP_qa SETTNGS
+
+" PHP_qa and PHP_unit settings
 
 " Set the codesniffer args
 let g:phpqa_codesniffer_args = '--standard=PSR2'
@@ -232,12 +241,45 @@ let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
 
 " NERDTree
 let NERDTreeIgnore=['\.vim$', '\.git$', '\~$']
+let NERDTreeChDirMode=2
+let NERDTreeWinSize=20
 
 " Syntastic
 let g:syntastic_enable_signs=1
+let g:syntastic_check_on_open=1
 let g:syntastic_auto_jump=1
-let g:syntastic_auto_jump=1
+let g:syntastic_always_populate_loc_list=1
 
+let g:syntastic_ignore_files=['^/usr/include/', '\c\.php$']
+
+" Emmet
+
+let g:user_emmet_expandabbr_key = '<c-e>'
+
+" CtrlP
+let g:ctrlp_map = '<leader>P'
+
+silent! nnoremap <unique> <silent> <leader>P :CtrlP<CR>
+" CtrlP for buffers
+silent! nnoremap <unique> <silent> <leader>B :CtrlPBuffer<CR>
+" CtrlP for tags
+silent! nnoremap <unique> <silent> <leader>T :CtrlPTag<CR>
+" CtrlP for filetype
+silent! nnoremap <unique> <silent> <leader>F :CtrlPMRU<CR>
+
+" Tagbar
+
+let g:tagbar_compact=1
+let g:tagbar_indent=1
+let g:tagbar_width=20
+let g:tagbar_show_visibility=1
+
+silent! nnoremap <unique> <silent> <leader>t :TagbarToggle<CR>
+
+" EasyTags
+
+" update only tags per save
+let g:easytags_events=['BufWritePost']
 
 "}}}
 " plugin mappings{{{
@@ -259,39 +301,75 @@ endif
 " Gundo
 nnoremap <leader>gu :GundoToggle<CR>
 
+" TComment
+
+noremap <leader>gb :TCommentBlock<CR>
 
 "}}}
 " general mappings {{{
+
+" remap ',' for last f/F operations in backward motion
+nnoremap <; ,
+
+" autoclose common symbols
+inoremap <leader>{ {<cr>}<c-o>O
+inoremap <leader>( ()<c-o>i
+inoremap <leader>[ []<c-o>i
+
+" quick edits and sourcing
+
+nnoremap <leader>es :tabnew ~/.vim/bundle/vim-snipmate/snippets<cr>
+nnoremap <leader>ev :tabnew $MYVIMRC<cr>
+nnoremap <leader>sv :so $MYVIMRC<cr>
 
 " disable keys
 nmap Q <nop>
 nmap F1 <nop>
 
-" mapping in replacement of esc or CTRL-C in command mode
+"paste from clipboard
+"overrides ctrlP plugin
+nnoremap <c-p> "+p
+"copy to clipboard
+vnoremap <c-c> "+y
 
-" applies nmap, smap, vmap
-map <leader>; <esc>
-smap <leader>; <esc>
-" applies imap, cmap
-imap <leader>; <esc>
-cmap <leader>; <c-c>
+" delete to blackhole register
+nmap <leader>d "_d
 
-" mapping for editing and sourcing .vimrc
+" indent the whole file
+nnoremap Q gg=G
 
-"map for editing .vimrc
-nnoremap <silent> <leader>ev :tabnew $MYVIMRC<cr>
-"map for sourcing .vimrc
-nnoremap <silent> <leader>sv :so $MYVIMRC<cr>
+" override goto first/last char
+nnoremap H _
+nnoremap L g_
+
+" remap H, L
+nnoremap <leader>H H
+nnoremap <leader>L L
+
+" remap <esc> key
+nnoremap <leader>; <esc>
+inoremap <leader>; <esc>
+vnoremap <leader>; <esc>
+snoremap <leader>; <esc>
+cnoremap <leader>; <c-c>
 
 " mapping for moving around when wrap is on
 nnoremap j gj
 nnoremap k gk
-" used for moving to the first non-blank char
-nnoremap gj +
-nnoremap gk -
 
-" yank from cursor to end of line
+" mappings up to the end of the line
 nnoremap Y y$
+
+" Fix linewise visual selection of various text objects
+" Note 'V' converts it to linewise
+nnoremap Vit vitVkoj
+nnoremap Vat vatV
+nnoremap Vab vabV
+nnoremap VaB vaBV
+nnoremap Va} va}V
+
+" vertical split
+nnoremap <leader>v  <c-w>v
 
 " for jumping around code blocks
 nmap <leader>j ]m
@@ -302,6 +380,8 @@ nmap <leader>K [M
 " toggles between relativenumber and number
 " If nu is set toggle rnu and vice versa
 nmap <silent>\ :exec &nu ? "set rnu!" : "set nu!"<cr>
+" toggle invisible characters
+nmap  <leader>l :set list!<cr>
 
 " mapping for windows"
 
@@ -319,23 +399,30 @@ nnoremap <c-left> <c-w>H
 "resizing windows
 nnoremap <Up> <c-w>+
 nnoremap <Down> <c-w>-
-nnoremap <Left> <c-w><
-nnoremap <Right> <c-w>>
+nnoremap <Right> <c-w><
+nnoremap <Left> <c-w>>
+
+"tab keymaps
+"replace the tag map key
+nmap  <c-t> :tabnew<cr>
+
+"go to previous tag definition
+nnoremap <leader>. <c-t>
 
 "_ in this keymap is to jump for a line with a nonblank char
 "map for switching buffers
 nnoremap <space> <c-w><c-w>_
 
 " selecting buffers
-nnoremap <silent> <leader>sb :ls<cr>:b<space>
+nnoremap <leader>b :ls<cr>:b<space>
 
 " toggle highlight from search pattern
-nnoremap <silent> <leader>/ :set hlsearch!<cr>
+nnoremap <leader>/ :set hlsearch!<cr>
 
 " toggle paste
 " Note it is the same with cmap <leader>p
 " There's also a map for pastetoggle set to F2
-nnoremap <silent> <leader>p :set paste!<cr>
+noremap <silent> <leader>p :set paste!<cr>
 
 " reselecting changed or pasted text
 nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
@@ -347,16 +434,29 @@ nnoremap <leader>cd :lcd %:h<cr>
 nnoremap <F12>g :exe 'silent !google-chrome %'<cr>
 nnoremap <F12>f :exe 'silent !firefox %'<cr>
 
-"display the current path
-cnoremap <leader>p <c-r>=expand("%:p:h")<cr>
-"display the current filename
-cnoremap <leader>f <c-r>=expand("%:p")<cr>
-
-" Open a newtab when doing a redirect of an :ex command output
-command! -nargs=+ -complete=command TabMessage :call TabMessage(<q-args>)
 "reselect indented block of text in vim
 vmap <leader>< <gv
 vmap <leader>> >gv
+
+" display the current path
+cnoremap <leader>p <c-r>=expand("%:p:h")<cr>
+" display the current filename
+cnoremap <leader>f <c-r>=expand("%:p")<cr>
+
+" remap to bash-like keys
+cnoremap <c-a> <home>
+cnoremap <c-e> <end>
+cnoremap <c-h> <s-left>
+cnoremap <c-l> <s-right>
+
+" shortcut for setting filetype
+cnoremap <leader>ft set ft=
+
+" saving readonly files
+cnoremap w!! w !sudo tee % > /dev/null
+
+" Open a newtab when doing a redirect of an :ex command output
+command! -nargs=+ -complete=command TabMessage :call TabMessage(<q-args>)
 
 "}}}
 " autocommands{{{
@@ -375,7 +475,7 @@ if has("autocmd")
     " Clear paste mode when going back to normal mode
     au InsertLeave * set nopaste
 
-    " CSS {{{
+    " CSS {{{2
     augroup ft_css
         au!
         au FileType css setlocal autoread
@@ -383,26 +483,26 @@ if has("autocmd")
     augroup END
     " }}}
 
-    " JAVASCRIPT {{{
+    " JAVASCRIPT {{{2
     augroup ft_js
         au FileType javascript nnoremap <buffer> <c-f> :call JsBeautify()<cr>
         au FileType javascript set sts=2 sw=2 et
     augroup END
     " }}}
 
-    " HTML  {{{
+    " HTML  {{{2
     augroup ft_html
         au FileType html nnoremap <buffer> <c-f> :call HtmlBeautify()<cr>
     augroup END
     " }}}
 
-    " VIM  {{{
+    " VIM  {{{2
     augroup ft_vim
         au FileType vim setlocal foldmethod=marker
     augroup END
     " }}}
 
-    " PHP {{{
+    " PHP {{{2
     augroup ft_php
         " note install first pman, and download php documentation
         au FileType php setlocal keywordprg=pman
