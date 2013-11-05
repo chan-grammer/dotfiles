@@ -37,7 +37,7 @@ Bundle 'godlygeek/csapprox'
 "EasyMotion
 Bundle 'Lokaltog/vim-easymotion'
 "T-Comment
-Bundle 'jmartindf/vim-tcomment'
+Bundle 'tomtom/tcomment_vim'
 "NerdTree
 Bundle 'scrooloose/nerdtree'
 "Vim-Airline
