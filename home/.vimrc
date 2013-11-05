@@ -59,25 +59,31 @@ Bundle 'maksimr/vim-jsbeautify'
 Bundle 'einars/js-beautify'
 "Vim EditorConfig
 Bundle 'editorconfig/editorconfig-vim'
-"Javascript-Libraries-Syntax
-Bundle 'mklabs/vim-backbone'
 "Syntastic
 Bundle 'scrooloose/syntastic'
+"CtrlP
+Bundle 'kien/ctrlp.vim'
+"Vim-Markdown
+Bundle 'plasticboy/vim-markdown'
+"Tagbar
+Bundle 'majutsushi/tagbar'
+"Vim-Misc
+Bundle 'xolox/vim-misc'
+" Vim-EasyTags
+Bundle 'xolox/vim-easytags'
+"Javascript-Libraries-Syntax
+" Bundle 'mklabs/vim-backbone'
+"Php_fixer
+" Bundle 'stephpy/vim-php-cs-fixer'
 
 "}}}
 " color schemes{{{
 
-"   Distinguised
-Bundle 'Lokaltog/vim-distinguished'
-"   Github
+"Github
 Bundle 'endel/vim-github-colorscheme'
-"   Pyte
+"Pyte
 Bundle 'therubymug/vim-pyte'
-"   Sahara
-Bundle 'tejr/sahara'
-"   Mustang
-Bundle 'cschlueter/vim-mustang'
-"   Bad Wolf
+"Bad Wolf
 Bundle 'sjl/badwolf'
 
 "}}}
