@@ -328,9 +328,12 @@ nmap F1 <nop>
 
 "paste from clipboard
 "overrides ctrlP plugin
-nnoremap <c-p> "+p
+nnoremap <c-p>p "+p
+nnoremap <c-p>P "+P
 "copy to clipboard
-vnoremap <c-c> "+y
+vnoremap <c-c> "+ygv<esc>
+"cut to clipboard
+vnoremap <c-d> "+ygvd
 
 " delete to blackhole register
 nmap <leader>d "_d
