@@ -70,6 +70,10 @@ Bundle 'majutsushi/tagbar'
 Bundle 'xolox/vim-misc'
 " Vim-EasyTags
 Bundle 'xolox/vim-easytags'
+"Vim-blade
+Bundle 'xsbeats/vim-blade'
+"Repeat
+Bundle 'tpope/vim-repeat'
 "Javascript-Libraries-Syntax
 " Bundle 'mklabs/vim-backbone'
 "Php_fixer
@@ -461,6 +465,7 @@ cnoremap w!! w !sudo tee % > /dev/null
 " Open a newtab when doing a redirect of an :ex command output
 command! -nargs=+ -complete=command TabMessage :call TabMessage(<q-args>)
 
+silent! call repeat#set("\<Plug>surround", v:count)
 "}}}
 " autocommands{{{
 
