@@ -198,6 +198,9 @@ set autoindent
 " hightlight as you type
 set incsearch
 " ignore case when searching
+" Note: \c or \C inside your search pattern ignores
+" ignorecase && smartcase settings
+" \pattern\C
 set ignorecase
 " case sensitive once there is the search word
 " starts with an uppercase letter
