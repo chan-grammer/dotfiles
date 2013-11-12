@@ -315,6 +315,11 @@ noremap <leader>gb :TCommentBlock<CR>
 "}}}
 " general mappings {{{
 
+" convert tabs to spaces
+map <leader>zs :<c-u>set et <bar> retab!<cr>
+" convert spaces to tabs
+map <leader>zt :<c-u>set noet <bar> retab!<cr>
+
 " remap ',' for last f/F operations in backward motion
 nnoremap <; ,
 
