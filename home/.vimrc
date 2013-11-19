@@ -265,6 +265,8 @@ let g:user_emmet_expandabbr_key = '<c-e>'
 
 " CtrlP
 let g:ctrlp_map = '<leader>P'
+let g:ctrlp_working_path_mode = 0
+let g:ctrlp_dotfiles = 0
 
 silent! nnoremap <unique> <silent> <leader>P :CtrlP<CR>
 " CtrlP for buffers
