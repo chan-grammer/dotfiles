@@ -385,6 +385,9 @@ nnoremap Vab vabV
 nnoremap VaB vaBV
 nnoremap Va} va}V
 
+" deleting a code block wherein the opening
+" curly brace is on its own line
+nnoremap <leader>df va}okd
 " vertical split
 nnoremap <leader>v  <c-w>v
 
