@@ -120,7 +120,7 @@ set listchars=tab:>-,eol:$
 " No modelines for security reasons
 set modelines=0
 " Toggle paste
-set pastetoggle=<F2>
+set pastetoggle=<leader>p
 " let vim choose the fileformat depending on EOL
 set fileformats=unix,dos
 " syntax coloring lines that are too long just slows down the world
@@ -433,11 +433,6 @@ nnoremap <leader>b :ls<cr>:b<space>
 
 " toggle highlight from search pattern
 nnoremap <leader>/ :set hlsearch!<cr>
-
-" toggle paste
-" Note it is the same with cmap <leader>p
-" There's also a map for pastetoggle set to F2
-noremap <silent> <leader>p :set paste!<cr>
 
 " reselecting changed or pasted text
 nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
