@@ -343,6 +343,10 @@ nnoremap <leader>es :tabnew ~/.vim/bundle/vim-snipmate/snippets<cr>
 nnoremap <leader>ev :tabnew $MYVIMRC<cr>
 nnoremap <leader>sv :so $MYVIMRC<cr>
 
+" navigation through quickfix results
+nnoremap ]] :cnext<cr>
+nnoremap [[ :cprevious<cr>
+
 " disable keys
 nmap Q <nop>
 nmap F1 <nop>
@@ -386,17 +390,16 @@ nnoremap Y y$
 
 " Fix linewise visual selection of various text objects
 " Note 'V' converts it to linewise
-nnoremap Vit vitVkoj
+nnoremap Vit vitVoj
 nnoremap Vat vatV
 nnoremap Vab vabV
 nnoremap VaB vaBV
 nnoremap Va} va}V
+nnoremap Va) va)V
 
-" deleting a code block wherein the opening
-" curly brace is on its own line
-nnoremap <leader>df va}okd
 " vertical split
-nnoremap <leader>v  <c-w>v
+nnoremap <leader>v  :rightbelow vnew<cr>
+nnoremap <leader>h  :rightbelow new<cr>
 
 " for jumping around code blocks
 nmap <leader>j ]m
