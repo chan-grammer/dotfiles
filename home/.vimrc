@@ -250,7 +250,7 @@ let g:SuperTabDefaultCompletionType = "context"
 let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
 
 " NERDTree
-let NERDTreeIgnore=['\.vim$', '\.git$', '\~$']
+let NERDTreeIgnore=['\.vim$','\~$']
 let NERDTreeChDirMode=2
 let NERDTreeWinSize=20
 
@@ -267,9 +267,12 @@ let g:syntastic_ignore_files=['^/usr/include/', '\c\.php$']
 let g:user_emmet_expandabbr_key = '<c-e>'
 
 " CtrlP
+" needed for the ctrlp_delete extension
+call ctrlp_bdelete#init()
 let g:ctrlp_map = '<leader>P'
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_dotfiles = 0
+let g:ctrlp_buftag_ctags_bin = '/usr/bin/ctags-exuberant'
 
 silent! nnoremap <unique> <silent> <leader>P :CtrlP<CR>
 " CtrlP for buffers
@@ -292,6 +295,7 @@ silent! nnoremap <unique> <silent> <leader>t :TagbarToggle<CR>
 
 " update only tags per save
 let g:easytags_events=['BufWritePost']
+let g:easytags_auto_highlight = 0
 
 "}}}
 " plugin mappings{{{
