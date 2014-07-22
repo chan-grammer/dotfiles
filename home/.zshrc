@@ -61,6 +61,11 @@ if [ -f ~/.aliases ]; then
     . ~/.aliases
 fi
 
+# also source .bash_aliases
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
 # Customize to your needs...
 export PATH=$PATH:/home/chanhxc/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
 # xampp, pear, composer
