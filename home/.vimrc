@@ -366,8 +366,9 @@ vnoremap <c-c> "+ygv<esc>
 "cut to clipboard
 vnoremap <c-d> "+ygvd
 
-" delete to blackhole register
-nmap <leader>d "_d
+" delete to blackhole register, used with any text-motions
+" example <c-d>i{ will delete all text within {} blocks
+nnoremap <c-d> "_d
 
 " indent the whole file
 nnoremap Q gg=G
@@ -391,15 +392,14 @@ cnoremap <leader>; <c-c>
 nnoremap j gj
 nnoremap k gk
 
-" mappings up to the end of the line
-nnoremap Y y$
+" copy text from current cursor position up to the end of the line
+nnoremap Y y$o<esc>
 
-" Fix linewise visual selection of various text objects
+" Convert selection of some various text-objects to their linewise counterpart
+" Useful when you want to paste them on the next line
 " Note 'V' converts it to linewise
-nnoremap Vit vitVoj
 nnoremap Vat vatV
-nnoremap Vab vabV
-nnoremap VaB vaBV
+nnoremap Va) vabV
 nnoremap Va} va}V
 nnoremap Va) va)V
 
@@ -408,19 +408,24 @@ nnoremap <leader>v  :rightbelow vnew<cr>
 nnoremap <leader>h  :rightbelow new<cr>
 
 " for jumping around code blocks
+" NOTE:
+" this assumes you execute these inside
+" a Class block, otherwise it just jumps to the next/prev { or }
+" go the the start of the next method
 nmap <leader>j ]m
-nmap <leader>J ]M
 nmap <leader>k [m
+" go the the end of the next method
+nmap <leader>J ]M
 nmap <leader>K [M
 
 " toggles between relativenumber and number
 " If nu is set toggle rnu and vice versa
 nmap <silent>\ :exec &nu ? "set rnu!" : "set nu!"<cr>
+
 " toggle invisible characters
 nmap  <leader>l :set list!<cr>
 
 " mapping for windows"
-
 nnoremap <silent><c-h> :wincmd h<cr>
 nnoremap <silent><c-j> :wincmd j<cr>
 nnoremap <silent><c-k> :wincmd k<cr>
@@ -460,10 +465,6 @@ nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
 
 " cd to the directory of the current file in buffer
 nnoremap <leader>cd :lcd %:h<cr>
-
-" mapping for opening the current file in browser
-nnoremap <F12>g :exe 'silent !google-chrome %'<cr>
-nnoremap <F12>f :exe 'silent !firefox %'<cr>
 
 "reselect indented block of text in vim
 vmap <leader>< <gv
