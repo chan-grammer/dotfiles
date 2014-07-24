@@ -43,8 +43,6 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'bling/vim-airline'
 "SuperTab
 Bundle 'ervandew/supertab'
-"Php_qa
-" Bundle 'joonty/vim-phpqa.git'
 "Match_tag_always
 Bundle 'Valloric/MatchTagAlways'
 "Tabular
@@ -63,8 +61,6 @@ Bundle 'scrooloose/syntastic'
 "CtrlP
 Bundle 'kien/ctrlp.vim'
 Bundle 'd11wtq/ctrlp_bdelete.vim'
-"Vim-Markdown
-" Bundle 'plasticboy/vim-markdown'
 "Tagbar
 Bundle 'majutsushi/tagbar'
 "Vim-Misc
@@ -77,10 +73,9 @@ Bundle 'xsbeats/vim-blade'
 Bundle 'tpope/vim-repeat'
 "Vim-jade
 Bundle 'digitaltoad/vim-jade'
-"Javascript-Libraries-Syntax
-" Bundle 'mklabs/vim-backbone'
-"Php_fixer
-" Bundle 'stephpy/vim-php-cs-fixer'
+"----Optional Plugins----
+" Php_qa
+" Bundle 'joonty/vim-phpqa.git'
 
 "}}}
 " color schemes{{{
