@@ -231,95 +231,101 @@ set foldcolumn=2
 
 " Note provide your own path for the respective phpqa_* plugins
 
-" PHP_qa and PHP_unit settings
+" PHP_QA
 
-" Set the codesniffer args
-let g:phpqa_codesniffer_args = '--standard=PSR2'
+    " Set the codesniffer args
+    let g:phpqa_codesniffer_args = '--standard=PSR2'
 
-" Paths
-let g:phpqa_php_cmd='/opt/lampp/bin/php'
-let g:phpqa_codesniffer_cmd='/home/chanhxc/pear/bin/phpcs'
-let g:phpqa_messdetector_cmd='/home/chanhxc/pear/bin/phpmd'
+    " Paths
+    let g:phpqa_php_cmd='/opt/lampp/bin/php'
+    let g:phpqa_codesniffer_cmd='/home/chanhxc/pear/bin/phpcs'
+    let g:phpqa_messdetector_cmd='/home/chanhxc/pear/bin/phpmd'
 
-" Dont run on save
-let g:phpqa_messdetector_autorun = 0
-let g:phpqa_codesniffer_autorun = 0
+    " Dont run on save
+    let g:phpqa_messdetector_autorun = 0
+    let g:phpqa_codesniffer_autorun = 0
 
-" Supertab
-let g:SuperTabDefaultCompletionType = "context"
-let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
+" SUPERTAB
+    let g:SuperTabDefaultCompletionType = "context"
+    let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
 
-" NERDTree
-let NERDTreeIgnore=['\.vim$','\~$']
-let NERDTreeChDirMode=2
-let NERDTreeWinSize=20
+" NERDTREE
+    let NERDTreeIgnore=['\.vim$','\~$']
+    " let NERDTreeChDirMode=2
+    let NERDTreeWinSize=15
 
-" Syntastic
-let g:syntastic_enable_signs=1
-let g:syntastic_check_on_open=1
-let g:syntastic_auto_jump=1
-let g:syntastic_always_populate_loc_list=1
+" SYNTASTIC
+    let g:syntastic_enable_signs=1
+    let g:syntastic_check_on_open=1
+    let g:syntastic_auto_jump=1
+    let g:syntastic_always_populate_loc_list=1
 
-let g:syntastic_ignore_files=['^/usr/include/', '\c\.php$']
+    let g:syntastic_ignore_files=['^/usr/include/', '\c\.php$']
 
-" Emmet
+" EMMET
 
-let g:user_emmet_expandabbr_key = '<c-e>'
+    let g:user_emmet_expandabbr_key = '<c-e>'
 
-" CtrlP
-" needed for the ctrlp_delete extension
-call ctrlp_bdelete#init()
-let g:ctrlp_map = '<leader>P'
-let g:ctrlp_working_path_mode = 0
-let g:ctrlp_dotfiles = 0
-let g:ctrlp_buftag_ctags_bin = '/usr/bin/ctags-exuberant'
+" CTRLP
 
-silent! nnoremap <unique> <silent> <leader>P :CtrlP<CR>
-" CtrlP for buffers
-silent! nnoremap <unique> <silent> <leader>B :CtrlPBuffer<CR>
-" CtrlP for tags
-silent! nnoremap <unique> <silent> <leader>T :CtrlPTag<CR>
-" CtrlP for filetype
-silent! nnoremap <unique> <silent> <leader>F :CtrlPMRU<CR>
+    " needed for the ctrlp_delete extension
+    call ctrlp_bdelete#init()
+    let g:ctrlp_map = '<leader>P'
+    let g:ctrlp_working_path_mode = 0
+    let g:ctrlp_dotfiles = 0
+    let g:ctrlp_buftag_ctags_bin = '/usr/bin/ctags-exuberant'
 
-" Tagbar
+    silent! nmap <unique> <silent> <leader>P :CtrlP<CR>
+    " CtrlP for buffers
+    silent! nmap <unique> <silent> <leader>B :CtrlPBuffer<CR>
+    " CtrlP for tags
+    silent! nmap <unique> <silent> <leader>T :CtrlPTag<CR>
+    " CtrlP for filetype
+    silent! nmap <unique> <silent> <leader>F :CtrlPMRU<CR>
 
-let g:tagbar_compact=1
-let g:tagbar_indent=1
-let g:tagbar_width=20
-let g:tagbar_show_visibility=1
+" TAGBAR
 
-silent! nnoremap <unique> <silent> <leader>t :TagbarToggle<CR>
+    let g:tagbar_compact=1
+    let g:tagbar_indent=1
+    let g:tagbar_width=20
+    let g:tagbar_show_visibility=1
 
-" EasyTags
+    silent! nmap <unique> <silent> <leader>t :TagbarToggle<CR>
 
-" update only tags per save
-let g:easytags_events=['BufWritePost']
-let g:easytags_auto_highlight = 0
+" EASYTAGS
 
+    " update only tags per save
+    let g:easytags_events=['BufWritePost']
+    let g:easytags_auto_highlight = 0
+
+" REPEAT
+    " reference for creating your own repeatable mappings
+    " http://vimcasts.org/episodes/creating-repeatable-mappings-with-repeat-vim/
+
+    " repeat surround mappings
+    silent! call repeat#set("\<Plug>surround", v:count)
 "}}}
 " plugin mappings{{{
 
 " NERDTree
-map <leader>nt :NERDTreeToggle<cr>
-map <leader>nf :NERDTreeFind<cr>
+    map <leader>nt :NERDTreeToggle<cr>
+    map <leader>nf :NERDTreeFind<cr>
 
-" Tabularize
-if exists(":Tabularize")
-    nnoremap <leader>a= :Tabularize /=<CR>
-    vnoremap <leader>a= :Tabularize /=<CR>
-    nnoremap <leader>a: :Tabularize /:<CR>
-    vnoremap <leader>a: :Tabularize /:<CR>
-    nnoremap <leader>a> :Tabularize /=><CR>
-    vnoremap <leader>a> :Tabularize /=><CR>
-endif
+" TABULARIZE
+    if exists(":Tabularize")
+        nnoremap <leader>a= :Tabularize /=<CR>
+        vnoremap <leader>a= :Tabularize /=<CR>
+        nnoremap <leader>a: :Tabularize /:<CR>
+        vnoremap <leader>a: :Tabularize /:<CR>
+        nnoremap <leader>a> :Tabularize /=><CR>
+        vnoremap <leader>a> :Tabularize /=><CR>
+    endif
 
-" Gundo
-nnoremap <leader>gu :GundoToggle<CR>
+" GUNDO
+    nnoremap <leader>gu :GundoToggle<CR>
 
-" TComment
-
-noremap <leader>gb :TCommentBlock<CR>
+" TCOMMENT
+    noremap <leader>gb :TCommentBlock<CR>
 
 "}}}
 " general mappings {{{
