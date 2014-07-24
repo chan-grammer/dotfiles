@@ -96,7 +96,7 @@ syntax enable
 let mapleader = ","
 let html_no_rendering=1
 
-" disable splash screen
+" disable splash screen(intro)
 set shortmess +=I
 
 set history=200
@@ -137,6 +137,10 @@ set mouse=a
 " go up to the directory hierarchy until a tag file is found
 " ';' means to recursively search upward. :h file-searching
 set tags=./tags;
+
+" reread file when a change is caused by some external programs
+" works in conjunction with :checktime
+" set autoread
 
 "}}}
 " ui settings{{{
@@ -183,6 +187,7 @@ set tabstop=4
 " width when >> or << are pressed
 set shiftwidth=4
 " use spaces instead
+" note: softtabstop takes precedence over tabstop
 set softtabstop=4
 " tab on the same level as previous line
 set smarttab
@@ -368,7 +373,7 @@ nnoremap <c-d> "_d
 " indent the whole file
 nnoremap Q gg=G
 
-" override goto first/last char
+" override goto first/last non-blank char in the current line
 nnoremap H _
 nnoremap L g_
 
@@ -446,7 +451,7 @@ nmap  <c-t> :tabnew<cr>
 nnoremap <leader>. <c-t>
 
 "_ in this keymap is to jump for a line with a nonblank char
-"map for switching buffers
+"map for switching windows
 nnoremap <space> <c-w><c-w>_
 
 " selecting buffers
@@ -493,6 +498,8 @@ if has("autocmd")
 
     " Look for unnamed register "
     " Return to previous cursor position upon reading a file
+    " check if the unnamed register is found and is NOT the last line of the file
+    " jump to the last known position in a file
     au BufReadPost *
                 \ if line("'\"") > 0 && line("'\"") <= line("$") |
                 \ exe "normal! g`\"" |
