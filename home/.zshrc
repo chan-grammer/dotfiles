@@ -44,14 +44,18 @@ plugins=(git composer zsh-syntax-highlighting extract tmux laravel4)
 
 # {{{ Aliases
 
-alias szs='source ~/.zshrc'
-alias ezs='vim ~/.zshrc'
-alias vifmzs='vim ~/.vifm/vifmrc'
+alias source_zsh='source ~/.zshrc'
+alias edit_zsh='vim ~/.zshrc'
 
 # Globals
 
 alias -g G="| grep"
+alias -g Gi="| grep -i"
 alias -g L="| less"
+alias -g Lmn="| less"
+
+# Suffix Aliases (Just like Open with ...)
+alias -s log="less -MN"
 
 # }}}
 
