@@ -1,12 +1,42 @@
+# Customized Bash/Zsh Commands
+
+# We're using these prefixes since we're using tab completion
+# Just by typing the prefix followed by name of the program, it shows all available options
+#   > start_ - starts an program
+#   > edit_ -  edits a configuration files
+#   > to_ - go to a specified directory
+
+# show in vertical output
+alias lsv="ls -1"
 alias rm="rm -i"
-alias naunodesk="nautilus --no-desktop"
-alias tohtdocs="cd /opt/lampp/htdocs"
+# always show colored output
+alias tree="tree -C"
+
+# Commands
+alias to_htdocs="cd /opt/lampp/htdocs"
+alias start_xampp="sudo /opt/lampp/xampp"
+alias start_phpserver="php -S localhost:8080"
+
+# HOMESHICK
 alias homeshick="source $HOME/.homesick/repos/homeshick/bin/homeshick.sh"
-alias phpini="sudo vim /opt/lampp/etc/php.ini"
-alias apacheconf=" sudo vim /opt/lampp/etc/httpd.conf"
-alias apachevhosts="sudo vim /opt/lampp/etc/extra/httpd-vhosts.conf"
-alias mysqlcnf="sudo vim /opt/lampp/etc/my.cnf"
-alias xamppconfig="sudo /opt/lampp/xampp"
-alias phpserver="php -S localhost:8080"
-alias edithosts="sudo vim /etc/hosts"
-alias editalias="vim ~/.aliases"
+
+# NPM
+
+# show globally or locally installed npm modules
+alias npm_show_global="ls -1 `npm root -g`"
+alias npm_show_local="ls -1 ./node_modules/"
+
+#RVM
+
+# RVM requires the shell to be a login shell
+# If we are in a non-login shell, just source RVM
+alias source_rvm="source ~/.rvm/scripts/rvm"
+
+# Editing Configuration Files
+alias edit_hosts="sudo vim /etc/hosts"
+alias edit_phpini="sudo vim /opt/lampp/etc/php.ini"
+alias edit_apacheconf="sudo vim /opt/lampp/etc/httpd.conf"
+alias edit_apachevhosts="sudo vim /opt/lampp/etc/extra/httpd-vhosts.conf"
+alias edit_mysqlcnf="sudo vim /opt/lampp/etc/my.cnf"
+alias edit_alias="vim ~/.aliases"
+alias edit_bash_alias="vim ~/.aliases"
