@@ -76,3 +76,7 @@ export PATH=$PATH:/home/chanhxc/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/us
 export PATH=$PATH:/opt/lampp/bin:/home/chanhxc/pear/bin:/home/chanhxc/.composer/vendor/bin:/opt/lampp/bin
 export TERM=xterm-256color
 [ -n "$TMUX" ] && export TERM=screen-256color
+
+export EDITOR='vim'
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
