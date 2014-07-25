@@ -5,12 +5,12 @@ filetype off    " required!
 
 " Set runtimepath for vundle in windows
 if has('win32') || has('win64')
-    set rtp+=~/vimfiles/bundle/vundle/
+    set rtp+=~/vimfiles/bundle/Vundle.vim
     call vundle#rc('$HOME/vimfiles/bundle/')
 else
     " For *nix
-    set rtp+=~/.vim/bundle/vundle/
-    call vundle#rc()
+    set rtp+=~/.vim/bundle/Vundle.vim
+    call vundle#begin()
 endif
 
 "}}}
