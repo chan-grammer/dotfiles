@@ -18,74 +18,78 @@ endif
 
 " let Vundle manage Vundle
 " required!
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 "Vim Snipmate
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'tomtom/tlib_vim'
-Bundle 'garbas/vim-snipmate'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
 "Emmet
-Bundle 'mattn/emmet-vim'
+Plugin 'mattn/emmet-vim'
 "Surround
-Bundle 'tpope/vim-surround'
+Plugin 'tpope/vim-surround'
 "Vim Haml/SCSS/Sass syntax highlighter
-Bundle 'tpope/vim-haml'
+Plugin 'tpope/vim-haml'
 "Vim-obsession
-Bundle 'tpope/vim-obsession'
+Plugin 'tpope/vim-obsession'
 "CsApprox
-Bundle 'godlygeek/csapprox'
+Plugin 'godlygeek/csapprox'
 "EasyMotion
-Bundle 'Lokaltog/vim-easymotion'
+Plugin 'Lokaltog/vim-easymotion'
 "T-Comment
-Bundle 'tomtom/tcomment_vim'
+Plugin 'tomtom/tcomment_vim'
 "NerdTree
-Bundle 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'
 "Vim-Airline
-Bundle 'bling/vim-airline'
+Plugin 'bling/vim-airline'
 "SuperTab
-Bundle 'ervandew/supertab'
+Plugin 'ervandew/supertab'
 "Match_tag_always
-Bundle 'Valloric/MatchTagAlways'
+Plugin 'Valloric/MatchTagAlways'
 "Tabular
-Bundle 'godlygeek/tabular'
+Plugin 'godlygeek/tabular'
 "Gundo
-Bundle 'sjl/gundo.vim'
+Plugin 'sjl/gundo.vim'
 "Vim-less
-Bundle 'lunaru/vim-less'
+Plugin 'lunaru/vim-less'
 "Vim-jsbeautify
-Bundle 'maksimr/vim-jsbeautify'
-Bundle 'einars/js-beautify'
+Plugin 'maksimr/vim-jsbeautify'
+Plugin 'einars/js-beautify'
 "Vim EditorConfig
-Bundle 'editorconfig/editorconfig-vim'
+Plugin 'editorconfig/editorconfig-vim'
 "Syntastic
-Bundle 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
 "CtrlP
-Bundle 'kien/ctrlp.vim'
-Bundle 'd11wtq/ctrlp_bdelete.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'd11wtq/ctrlp_bdelete.vim'
 "Tagbar
-Bundle 'majutsushi/tagbar'
+Plugin 'majutsushi/tagbar'
 "Vim-Misc
-Bundle 'xolox/vim-misc'
+Plugin 'xolox/vim-misc'
 " Vim-EasyTags
-Bundle 'xolox/vim-easytags'
+Plugin 'xolox/vim-easytags'
 "Vim-blade
-Bundle 'xsbeats/vim-blade'
+Plugin 'xsbeats/vim-blade'
 "Repeat
-Bundle 'tpope/vim-repeat'
+Plugin 'tpope/vim-repeat'
 "Vim-jade
-Bundle 'digitaltoad/vim-jade'
+Plugin 'digitaltoad/vim-jade'
 "----Optional Plugins----
 " Php_qa
-" Bundle 'joonty/vim-phpqa.git'
+" Plugin 'joonty/vim-phpqa.git'
 
-"}}}
 " color schemes{{{
 
 "Github
-Bundle 'endel/vim-github-colorscheme'
+Plugin 'endel/vim-github-colorscheme'
 "Pyte
-Bundle 'therubymug/vim-pyte'
+Plugin 'therubymug/vim-pyte'
 "Bad Wolf
-Bundle 'sjl/badwolf'
+Plugin 'sjl/badwolf'
+
+" All Plugins must be added before calling this line
+call vundle#end() "required
+
+"}}}
 
 "}}}
 " vim general settings{{{
