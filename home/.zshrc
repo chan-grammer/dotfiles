@@ -80,3 +80,5 @@ export TERM=xterm-256color
 export EDITOR='vim'
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+source /home/linuxlite/.homesick/repos/homeshick/homeshick.sh
