@@ -17,9 +17,6 @@ alias to_htdocs="cd /opt/lampp/htdocs"
 alias start_xampp="sudo /opt/lampp/xampp"
 alias start_phpserver="php -S localhost:8080"
 
-# HOMESHICK
-alias homeshick="source $HOME/.homesick/repos/homeshick/bin/homeshick.sh"
-
 # NPM
 
 # show globally or locally installed npm modules
