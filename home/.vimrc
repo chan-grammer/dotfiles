@@ -144,7 +144,8 @@ set tags=./tags;
 
 " reread file when a change is caused by some external programs
 " works in conjunction with :checktime
-" set autoread
+set autoread
+set updatetime=500
 
 "}}}
 " ui settings{{{
@@ -513,6 +514,9 @@ if has("autocmd")
     au BufWritePre * :%s/\v\s+$//e
     " Clear paste mode when going back to normal mode
     au InsertLeave * set nopaste
+    " Forces the file to reload if no keyboard is pressed within a specified
+    " time
+    au BufEnter,BufWinEnter,CursorHold * :checktime
 
     " CSS {{{2
     augroup ft_css
