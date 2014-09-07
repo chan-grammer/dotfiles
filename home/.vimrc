@@ -19,10 +19,6 @@ endif
 " let Vundle manage Vundle
 " required!
 Plugin 'gmarik/Vundle.vim'
-"Vim Snipmate
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
 "Emmet
 Plugin 'mattn/emmet-vim'
 "Surround
@@ -49,8 +45,6 @@ Plugin 'Valloric/MatchTagAlways'
 Plugin 'godlygeek/tabular'
 "Gundo
 Plugin 'sjl/gundo.vim'
-"Vim-less
-Plugin 'lunaru/vim-less'
 "Vim-jsbeautify
 Plugin 'maksimr/vim-jsbeautify'
 Plugin 'einars/js-beautify'
@@ -65,17 +59,12 @@ Plugin 'd11wtq/ctrlp_bdelete.vim'
 Plugin 'majutsushi/tagbar'
 "Vim-Misc
 Plugin 'xolox/vim-misc'
-" Vim-EasyTags
+"Vim-EasyTags
 Plugin 'xolox/vim-easytags'
-"Vim-blade
-Plugin 'xsbeats/vim-blade'
 "Repeat
 Plugin 'tpope/vim-repeat'
-"Vim-jade
-Plugin 'digitaltoad/vim-jade'
-"----Optional Plugins----
-" Php_qa
-" Plugin 'joonty/vim-phpqa.git'
+"Ultisnips
+Plugin 'SirVer/ultisnips'
 
 " color schemes{{{
 
@@ -309,6 +298,13 @@ set foldcolumn=2
 
     " repeat surround mappings
     silent! call repeat#set("\<Plug>surround", v:count)
+
+" ULTISNIPS
+    " split window vertically when editing
+    let g:UltiSnipsEditSplit="vertical"
+    " let g:UltiSnipsExpandTrigger="<tab>"
+    " let g:UltiSnipsJumpForwardTrigger="<tab>"
+    " let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 "}}}
 " plugin mappings{{{
 
@@ -350,7 +346,6 @@ inoremap <leader>[ []<c-o>i
 
 " quick edits and sourcing
 
-nnoremap <leader>es :tabnew ~/.vim/bundle/vim-snipmate/snippets<cr>
 nnoremap <leader>ev :tabnew $MYVIMRC<cr>
 nnoremap <leader>sv :so $MYVIMRC<cr>
 
