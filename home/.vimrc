@@ -249,6 +249,9 @@ set foldcolumn=2
     let NERDTreeWinSize=15
 
 " SYNTASTIC
+    let g:syntastic_javascript_checkers=['jshint']
+    let g:syntastic_javascript_jshint_exec='/usr/local/bin/jshint'
+
     let g:syntastic_enable_signs=1
     let g:syntastic_check_on_open=1
     let g:syntastic_auto_jump=1
