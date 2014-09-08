@@ -493,7 +493,6 @@ cnoremap w!! w !sudo tee % > /dev/null
 " Open a newtab when doing a redirect of an :ex command output
 command! -nargs=+ -complete=command TabMessage :call TabMessage(<q-args>)
 
-silent! call repeat#set("\<Plug>surround", v:count)
 "}}}
 " autocommands{{{
 
