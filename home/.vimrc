@@ -469,6 +469,12 @@ nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
 " cd to the directory of the current file in buffer
 nnoremap <leader>cd :lcd %:h<cr>
 
+" shortcut for creating a directory
+nnoremap <leader>md :!mkdir -p
+
+" shortcut for creating a directory
+nnoremap <leader>mf :!touch
+
 "reselect indented block of text in vim
 vmap <leader>< <gv
 vmap <leader>> >gv
