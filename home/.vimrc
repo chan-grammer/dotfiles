@@ -68,12 +68,12 @@ Plugin 'SirVer/ultisnips'
 
 " color schemes{{{
 
-"Github
-Plugin 'endel/vim-github-colorscheme'
 "Pyte
 Plugin 'therubymug/vim-pyte'
-"Bad Wolf
-Plugin 'sjl/badwolf'
+"FlatColor
+Plugin 'MaxSt/FlatColor'
+"Gruvbox
+Plugin 'morhetz/gruvbox'
 
 " All Plugins must be added before calling this line
 call vundle#end() "required
@@ -136,26 +136,34 @@ set tags=./tags;
 set autoread
 set updatetime=500
 
+" disable background color erase
+set t_ut=
+
 "}}}
 " ui settings{{{
 
 if has('gui_running')
+
     if has("gui_gtk2")
         set guifont=Inconsolata\ 12
 
     elseif has("gui_win32")
         set guifont=Consolas:h11:cANSI
     endif
+
     set background=light
     " set guioptions-=T
     " set guioptions-=e
     set guioptions=ac
     colorscheme pyte
+
 else
+
     set background=dark
-    colorscheme badwolf
-    let g:badwolf_darkgutter = 1
-    let g:badwolf_html_link_underline = 0
+    colorscheme gruvbox
+
+    let g:gruvbox_contrast_dark = 'dark'
+
 endif
 
 "}}}
