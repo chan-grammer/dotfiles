@@ -65,6 +65,10 @@ Plugin 'xolox/vim-easytags'
 Plugin 'tpope/vim-repeat'
 "Ultisnips
 Plugin 'SirVer/ultisnips'
+"Vim-Javascript
+Plugin 'jelera/vim-javascript-syntax'
+"TERN-JS
+Plugin 'marijnh/tern_for_vim'
 
 " color schemes{{{
 
