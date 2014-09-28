@@ -543,6 +543,13 @@ if has("autocmd")
     " when the user hasn't pressed a key for a specified amount of time
     au BufEnter,BufWinEnter,CursorHold,CursorHoldI * : silent! checktime
 
+    " if vim is compiled with omnifunc
+    if exists("+omnifunc")
+        autocmd Filetype *
+        \if &omnifunc == ""
+        \setlocal omnifunc=syntaxcomplete#Complete
+        \endif
+    endif
 
     " CSS {{{2
     augroup ft_css
@@ -577,15 +584,6 @@ if has("autocmd")
         au FileType php setlocal keywordprg=pman
     augroup END
     " }}}
-
-    " if vim is compiled with omnifunc
-    if exists("+omnifunc")
-        autocmd Filetype *
-        \if &omnifunc == "" |
-        \setlocal omnifunc=syntaxcomplete#Complete |
-        \endif
-    endif
-
 
 "}}}
 " vim scripts {{{
