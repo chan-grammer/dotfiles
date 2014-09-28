@@ -322,6 +322,11 @@ set foldcolumn=2
     " let g:UltiSnipsExpandTrigger="<tab>"
     " let g:UltiSnipsJumpForwardTrigger="<tab>"
     " let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+" AIRLINE
+  let g:airline#extensions#tabline#enabled = 1
+  let g:airline#extensions#whitespace#enabled = 1
+  let g:airline#extensions#tmuxline#enabled = 1
 "}}}
 " plugin mappings{{{
 
