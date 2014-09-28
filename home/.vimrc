@@ -534,11 +534,14 @@ if has("autocmd")
 
     " Removing trailing spaces before saving the file
     au BufWritePre * :%s/\v\s+$//e
+
     " Clear paste mode when going back to normal mode
     au InsertLeave * set nopaste
-    " Forces the file to reload if no keyboard is pressed within a specified
-    " time
-    au BufEnter,BufWinEnter,CursorHold * :checktime
+
+    " Forces the file to reload when entering a buffer or
+    " when the user hasn't pressed a key for a specified amount of time
+    au BufEnter,BufWinEnter,CursorHold,CursorHoldI * : silent! checktime
+
 
     " CSS {{{2
     augroup ft_css
