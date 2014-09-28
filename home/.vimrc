@@ -69,6 +69,8 @@ Plugin 'SirVer/ultisnips'
 Plugin 'jelera/vim-javascript-syntax'
 "TERN-JS
 Plugin 'marijnh/tern_for_vim'
+"Tmux-Navigator
+Plugin 'christoomey/vim-tmux-navigator'
 
 " color schemes{{{
 
