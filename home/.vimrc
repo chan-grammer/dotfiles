@@ -485,14 +485,15 @@ nnoremap <leader>/ :set hlsearch!<cr>
 " reselecting changed or pasted text
 nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
 
+" Bash command shortcuts
+" shortcut for renaming
+nnoremap <leader>mv :!mv %:p %:p:h
 " cd to the directory of the current file in buffer
 nnoremap <leader>cd :lcd %:h<cr>
-
 " shortcut for creating a directory
 nnoremap <leader>md :!mkdir -p
-
 " shortcut for creating a directory
-nnoremap <leader>mf :!touch
+nnoremap <leader>mf :!touch %:p:h
 
 "reselect indented block of text in vim
 vmap <leader>< <gv
