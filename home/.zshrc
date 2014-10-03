@@ -82,3 +82,6 @@ export EDITOR='vim'
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 source /home/linuxlite/.homesick/repos/homeshick/homeshick.sh
+# NVM
+source ~/.nvm/nvm.sh
+[[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
