@@ -67,10 +67,14 @@ Plugin 'tpope/vim-repeat'
 Plugin 'SirVer/ultisnips'
 "Vim-Javascript
 Plugin 'jelera/vim-javascript-syntax'
+"Vim-CSS3-Syntax
+Plugin 'hail2u/vim-css3-syntax'
 "TERN-JS
 Plugin 'marijnh/tern_for_vim'
 "Tmux-Navigator
 Plugin 'christoomey/vim-tmux-navigator'
+"Vim-Jade
+Plugin 'digitaltoad/vim-jade'
 "PreserveNoEOL
 Plugin 'vim-scripts/PreserveNoEOL'
 
