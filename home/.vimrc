@@ -551,6 +551,9 @@ if has("autocmd")
     " Clear paste mode when going back to normal mode
     au InsertLeave * set nopaste
 
+    " Forces files with 'md' extension to use markdown as filetype
+    au BufNewFile,BufReadPost *.md set filetype=markdown
+
     " Forces the file to reload when entering a buffer or
     " when the user hasn't pressed a key for a specified amount of time
     au BufEnter,BufWinEnter,CursorHold,CursorHoldI * : silent! checktime
