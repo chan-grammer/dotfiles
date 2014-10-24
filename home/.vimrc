@@ -71,6 +71,8 @@ Plugin 'jelera/vim-javascript-syntax'
 Plugin 'marijnh/tern_for_vim'
 "Tmux-Navigator
 Plugin 'christoomey/vim-tmux-navigator'
+"PreserveNoEOL
+Plugin 'vim-scripts/PreserveNoEOL'
 
 " color schemes{{{
 
