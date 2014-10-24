@@ -77,12 +77,17 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'digitaltoad/vim-jade'
 "PreserveNoEOL
 Plugin 'vim-scripts/PreserveNoEOL'
+"Vim-gitgutter
+Plugin 'airblade/vim-gitgutter'
+"COLOR SCHEMES
 "Pyte
 Plugin 'therubymug/vim-pyte'
 "FlatColor
 Plugin 'MaxSt/FlatColor'
 "Gruvbox
 Plugin 'morhetz/gruvbox'
+"Molokai
+Plugin 'tomasr/molokai'
 
 " All Plugins must be added before calling this line
 call vundle#end() "required
@@ -158,18 +163,18 @@ if has('gui_running')
         set guifont=Consolas:h11:cANSI
     endif
 
-    set background=light
     " set guioptions-=T
     " set guioptions-=e
+    set background=dark
     set guioptions=ac
-    colorscheme pyte
+    colorscheme gruvbox
 
 else
 
     set background=dark
-    colorscheme gruvbox
+    colorscheme molokai
 
-    let g:gruvbox_contrast_dark = 'dark'
+    let g:rehash256=1
 
 endif
 
