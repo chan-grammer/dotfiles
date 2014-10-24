@@ -77,9 +77,6 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'digitaltoad/vim-jade'
 "PreserveNoEOL
 Plugin 'vim-scripts/PreserveNoEOL'
-
-" color schemes{{{
-
 "Pyte
 Plugin 'therubymug/vim-pyte'
 "FlatColor
@@ -89,8 +86,6 @@ Plugin 'morhetz/gruvbox'
 
 " All Plugins must be added before calling this line
 call vundle#end() "required
-
-"}}}
 
 "}}}
 " vim general settings{{{
