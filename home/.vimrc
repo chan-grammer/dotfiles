@@ -330,9 +330,10 @@ set foldcolumn=2
     " let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " AIRLINE
-  let g:airline#extensions#tabline#enabled = 1
-  let g:airline#extensions#whitespace#enabled = 1
-  let g:airline#extensions#tmuxline#enabled = 1
+    let g:airline#extensions#tabline#enabled = 1
+    let g:airline#extensions#whitespace#enabled = 1
+    let g:airline#extensions#tmuxline#enabled = 1
+
 " JSBEAUTIFY
 
     " Set path where jsbeautify will look for .editorconfig file
