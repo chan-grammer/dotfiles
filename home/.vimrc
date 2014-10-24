@@ -328,6 +328,11 @@ set foldcolumn=2
   let g:airline#extensions#tabline#enabled = 1
   let g:airline#extensions#whitespace#enabled = 1
   let g:airline#extensions#tmuxline#enabled = 1
+" JSBEAUTIFY
+
+    " Set path where jsbeautify will look for .editorconfig file
+    let g:editorconfig_Beautifier = "/home/chanhxc/.vim/.editorconfig"
+
 "}}}
 " plugin mappings{{{
 
