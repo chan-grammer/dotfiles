@@ -338,6 +338,15 @@ set foldcolumn=2
     let g:editorconfig_Beautifier = "/home/chanhxc/.vim/.editorconfig"
 
 "}}}
+" custom highlights{{{
+
+    " Create a hightlight marker when it exceeds a certain 'line length'
+    " In this example: if the line exceeds 80 char line-length
+    " Source : http://superuser.com/a/771578/349890
+    highlight MarkLineLengthExcess ctermbg=magenta
+    call matchadd('MarkLineLengthExcess', '\%81v', 100)
+
+" }}}
 " plugin mappings{{{
 
 " NERDTree
