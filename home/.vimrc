@@ -434,7 +434,7 @@ nnoremap j gj
 nnoremap k gk
 
 " copy text from current cursor position up to the end of the line
-nnoremap Y y$o<esc>
+nnoremap Y y$<esc>
 
 " Convert selection of some various text-objects to their linewise counterpart
 " Useful when you want to paste them on the next line
