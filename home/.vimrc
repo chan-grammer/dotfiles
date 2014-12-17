@@ -77,8 +77,6 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'digitaltoad/vim-jade'
 "PreserveNoEOL
 Plugin 'vim-scripts/PreserveNoEOL'
-"Vim-gitgutter
-Plugin 'airblade/vim-gitgutter'
 "COLOR SCHEMES
 "Pyte
 Plugin 'therubymug/vim-pyte'
