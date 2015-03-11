@@ -86,6 +86,8 @@ Plugin 'MaxSt/FlatColor'
 Plugin 'morhetz/gruvbox'
 "Molokai
 Plugin 'tomasr/molokai'
+"Vim-PHP-Namespace
+Plugin 'vim-php-namespace'
 
 " All Plugins must be added before calling this line
 call vundle#end() "required
@@ -326,6 +328,10 @@ set foldcolumn=2
 
     " Set path where jsbeautify will look for .editorconfig file
     let g:editorconfig_Beautifier = "/home/chanhxc/.vim/.editorconfig"
+
+" VIM-PHP-NAMESPACE
+    inoremap <leader>u <C-O>:call PhpInsertUse()<CR>
+    noremap <leader>u :call PhpInsertUse()<CR>
 
 "}}}
 " custom highlights{{{
