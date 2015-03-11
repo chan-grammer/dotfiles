@@ -296,6 +296,7 @@ set foldcolumn=2
 " EASYTAGS
 
     " update only tags per save
+    let g:easytags_file='~/.vim/tags'
     let g:easytags_events=['BufWritePost']
     let g:easytags_auto_highlight = 0
 
