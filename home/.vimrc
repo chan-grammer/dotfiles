@@ -241,22 +241,6 @@ set foldcolumn=2
 "}}}
 " plugin settings {{{
 
-" Note provide your own path for the respective phpqa_* plugins
-
-" PHP_QA
-
-    " Set the codesniffer args
-    let g:phpqa_codesniffer_args = '--standard=PSR2'
-
-    " Paths
-    let g:phpqa_php_cmd='/opt/lampp/bin/php'
-    let g:phpqa_codesniffer_cmd='/home/chanhxc/pear/bin/phpcs'
-    let g:phpqa_messdetector_cmd='/home/chanhxc/pear/bin/phpmd'
-
-    " Dont run on save
-    let g:phpqa_messdetector_autorun = 0
-    let g:phpqa_codesniffer_autorun = 0
-
 " SUPERTAB
     let g:SuperTabDefaultCompletionType = "context"
     let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
