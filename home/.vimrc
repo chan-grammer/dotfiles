@@ -281,6 +281,8 @@ set foldcolumn=2
     silent! nmap <unique> <silent> <leader>T :CtrlPTag<CR>
     " CtrlP for filetype
     silent! nmap <unique> <silent> <leader>F :CtrlPMRU<CR>
+    " CtrlP for clearing the cache,same as pressing <F5>
+    silent! nmap <unique> <leader>C :CtrlPClearCache<CR>
 
 " TAGBAR
 
