@@ -298,7 +298,10 @@ set foldcolumn=2
     " update only tags per save
     let g:easytags_file='~/.vim/tags'
     let g:easytags_events=['BufWritePost']
-    let g:easytags_auto_highlight = 0
+    let g:easytags_auto_highlight=0
+    " write first on project-specific tag files, then fallback to the
+    " global tags file if not found
+    let g:easytags_dynamic_files=1
 
 " REPEAT
     " reference for creating your own repeatable mappings
