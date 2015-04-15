@@ -251,6 +251,7 @@ set foldcolumn=2
     let NERDTreeIgnore=['\.vim$','\~$']
     " let NERDTreeChDirMode=2
     let NERDTreeWinSize=15
+    let NERDTreeAutoDeleteBuffer=1
 
 " SYNTASTIC
     let g:syntastic_javascript_checkers=['jshint']
