@@ -222,7 +222,11 @@ set ignorecase
 " case sensitive once there is the search word
 " starts with an uppercase letter
 set smartcase
-" for regex
+" decides whether a special character in regex
+" is to be taken literally or not
+" to use the 'verymagic' option
+" prepend your searches with \v, all non-alphanumeric
+" characters have special meaning.
 set magic
 
 "}}}
