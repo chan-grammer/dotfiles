@@ -378,6 +378,9 @@ map <leader>zs :<c-u>set et <bar> retab!<cr>
 " convert spaces to tabs
 map <leader>zt :<c-u>set noet <bar> retab!<cr>
 
+" show the current indentation settings
+map <leader>zz :<c-u>set et? <bar> set sw? <bar> set sts? <bar> set ts?<cr>
+
 " remap ',' for last f/F operations in backward motion
 nnoremap <; ,
 
