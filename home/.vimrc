@@ -104,7 +104,7 @@ let html_no_rendering=1
 " disable splash screen(intro)
 set shortmess +=I
 
-set history=200
+set history=1000
 set encoding=utf-8
 set hidden
 " search relative to the directory of the current file
