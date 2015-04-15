@@ -12,10 +12,13 @@ alias rm="rm -i"
 # always show colored output
 alias tree="tree -C"
 
-# Commands
+# XAMPP
 alias to_htdocs="cd /opt/lampp/htdocs"
-alias start_xampp="sudo /opt/lampp/xampp"
-alias start_phpserver="php -S localhost:8080"
+alias xampp="sudo /opt/lampp/xampp"
+alias xs="sudo /opt/lampp/xampp start"
+alias xr="sudo /opt/lampp/xampp reload"
+alias xx="sudo /opt/lampp/xampp stop"
+alias phpServe="php -S localhost:8080"
 
 # NPM
 
