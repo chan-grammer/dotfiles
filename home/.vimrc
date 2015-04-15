@@ -488,6 +488,8 @@ nnoremap <Down> <c-w>-
 nnoremap <Right> <c-w><
 nnoremap <Left> <c-w>>
 
+nmap <leader>r :vert resize<space>
+
 "tab keymaps
 "replace the tag map key
 nmap  <c-t> :tabnew<cr>
