@@ -71,15 +71,17 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 # Customize to your needs...
-export PATH=$PATH:/home/chanhxc/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
-# xampp, pear, composer
-export PATH=$PATH:/opt/lampp/bin:/home/chanhxc/pear/bin:/home/chanhxc/.composer/vendor/bin:/opt/lampp/bin
+PATH=$PATH:/home/chanhxc/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+PATH=$PATH:$HOME/.composer/vendor/bin # Add laravel path
+PATH=$PATH:/opt/lampp/bin
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export PATH
+
+
 export TERM=xterm-256color
 [ -n "$TMUX" ] && export TERM=screen-256color
 
 export EDITOR='vim'
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 # HOMESHICK
 source $HOME/.homesick/repos/homeshick/homeshick.sh
