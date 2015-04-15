@@ -332,7 +332,7 @@ set foldcolumn=2
 " JSBEAUTIFY
 
     " Set path where jsbeautify will look for .editorconfig file
-    let g:editorconfig_Beautifier = "/home/chanhxc/.vim/.editorconfig"
+    let g:editorconfig_Beautifier = expand('~/.vim/.editorconfig')
 
 " VIM-PHP-NAMESPACE
     inoremap <leader>u <C-O>:call PhpInsertUse()<CR>
