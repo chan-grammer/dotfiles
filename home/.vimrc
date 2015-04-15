@@ -282,7 +282,7 @@ set foldcolumn=2
     " CtrlP for tags
     silent! nmap <unique> <silent> <leader>T :CtrlPTag<CR>
     " CtrlP for filetype
-    silent! nmap <unique> <silent> <leader>F :CtrlPMRU<CR>
+    silent! nmap <unique> <silent> <leader>F :CtrlPBufTagAll<CR>
     " CtrlP for clearing the cache,same as pressing <F5>
     silent! nmap <unique> <leader>C :CtrlPClearCache<CR>
 
