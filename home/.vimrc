@@ -86,8 +86,16 @@ Plugin 'MaxSt/FlatColor'
 Plugin 'morhetz/gruvbox'
 "Molokai
 Plugin 'tomasr/molokai'
+"Vim-Blade
+Plugin 'xsbeats/vim-blade'
 "Vim-PHP-Namespace
 Plugin 'vim-php-namespace'
+"Vim-Fugitive
+Plugin 'tpope/vim-fugitive'
+"Vim-Instant-Markdown
+Plugin 'suan/vim-instant-markdown'
+"Vim CtrlSpace
+" Plugin 'szw/vim-ctrlspace'
 
 " All Plugins must be added before calling this line
 call vundle#end() "required
