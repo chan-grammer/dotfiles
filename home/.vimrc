@@ -639,6 +639,13 @@ if has("autocmd")
     augroup END
     " }}}
 
+    " PYTHON {{{2
+    augroup ft_python
+        au!
+        au Filetype python setlocal st=4 sw=4 ts=4 et
+    augroup END
+    " }}}
+
 "}}}
 " vim scripts {{{
 
