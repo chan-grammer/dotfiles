@@ -306,7 +306,7 @@ set foldcolumn=2
     let g:tagbar_width=20
     let g:tagbar_show_visibility=1
 
-    silent! nmap <unique> <silent> <leader>t :TagbarToggle<CR>
+    silent! nmap <unique> <silent> <leader>st :TagbarToggle<CR>
 
 " EASYTAGS
 
