@@ -593,7 +593,7 @@ if has("autocmd")
     au InsertLeave * set nopaste
 
     " Forces files with 'md' extension to use markdown as filetype
-    au BufNewFile,BufReadPost *.md set filetype=markdown
+    au BufNewFile,BufReadPost *.md setlocal filetype=markdown
 
     " Forces the file to reload when entering a buffer or
     " when the user hasn't pressed a key for a specified amount of time
