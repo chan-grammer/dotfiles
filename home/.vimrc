@@ -523,8 +523,9 @@ nnoremap <leader>. <c-t>
 "map for switching windows
 nnoremap <space> <c-w><c-w>_
 
-" selecting buffers
-nnoremap <leader>b :ls<cr>:b<space>
+" show buffer list, and allows you to switch buffers
+nmap <leader>b :ls<cr>:b<space>
+nmap <leader>sb :ls<cr>:sb<space>
 
 " toggle highlight from search pattern
 nnoremap <leader>/ :set hlsearch!<cr>
