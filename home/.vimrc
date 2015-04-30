@@ -611,25 +611,29 @@ if has("autocmd")
 
     " JAVASCRIPT {{{2
     augroup ft_js
+        au!
         au FileType javascript nnoremap <buffer> <c-f> :call JsBeautify()<cr>
-        au FileType javascript set sts=2 sw=2 et
+        au FileType javascript setlocal sts=2 sw=2 ts=2 et
     augroup END
     " }}}
 
     " HTML  {{{2
     augroup ft_html
+        au!
         au FileType html nnoremap <buffer> <c-f> :call HtmlBeautify()<cr>
     augroup END
     " }}}
 
     " VIM  {{{2
     augroup ft_vim
+        au!
         au FileType vim setlocal foldmethod=marker
     augroup END
     " }}}
 
     " PHP {{{2
     augroup ft_php
+        au!
         " note install first pman, and download php documentation
         au FileType php setlocal keywordprg=pman
     augroup END
