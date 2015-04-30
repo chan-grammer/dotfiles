@@ -527,6 +527,11 @@ nnoremap <space> <c-w><c-w>_
 nmap <leader>b :ls<cr>:b<space>
 nmap <leader>sb :ls<cr>:sb<space>
 
+" show tab list, and allows you to switch tab
+nmap <leader>tl :tabs<cr>:tabn<space>
+"allows you to move the tabs
+nmap <leader>tm :tabm <space>
+
 " toggle highlight from search pattern
 nnoremap <leader>/ :set hlsearch!<cr>
 
