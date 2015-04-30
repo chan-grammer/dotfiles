@@ -356,6 +356,10 @@ set foldcolumn=2
     inoremap <leader>u <C-O>:call PhpInsertUse()<CR>
     noremap <leader>u :call PhpInsertUse()<CR>
 
+" VIM-INSTANT-MARKDOWN
+    let g:instant_markdown_slow = 1
+    let g:instant_markdown_autostart = 0
+
 "}}}
 " custom highlights{{{
 
