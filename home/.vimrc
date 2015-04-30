@@ -333,9 +333,19 @@ set foldcolumn=2
     " let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " AIRLINE
+    let g:airline_theme = 'bubblegum'
+    let g:airline_left_sep = ''
+    let g:airline_right_sep = ''
+    let g:airline#extensions#tabline#left_sep = ''
+    let g:airline#extensions#tabline#right_sep = ''
+
+    let g:airline#extensions#ctrlspace#enabled = 1
+
     let g:airline#extensions#tabline#enabled = 1
     let g:airline#extensions#whitespace#enabled = 1
     let g:airline#extensions#tmuxline#enabled = 1
+    " Format on displaying tab names
+    let g:airline#extensions#tabline#formatter = 'unique_tail'
 
 " JSBEAUTIFY
 
